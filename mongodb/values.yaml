@@ -5,14 +5,17 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: mongo
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: "mongo"
+fullnameOverride: "mongo"
+
+ports:
+  containerPort: 27017
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -38,7 +41,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 27017
+  targetPort: 27017
 
 ingress:
   enabled: false
