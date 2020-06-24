@@ -11,7 +11,7 @@ image:
   tag: "dev"
 
 imagePullSecrets: []
-nameOverride: ""
+nameOverride: "web"
 fullnameOverride: ""
 
 ports:
@@ -19,7 +19,7 @@ ports:
 
 env:
   disableHostCheck: "true"
-  databaseURL: mongodb://mongo-service/Highscores?retryWrites=true&w=majority
+  databaseURL: mongodb://mongo/Highscores?retryWrites=true&w=majority
 
 serviceAccount:
   # Specifies whether a service account should be created
