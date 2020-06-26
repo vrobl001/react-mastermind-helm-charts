@@ -58,9 +58,9 @@ ingress:
       paths:
       - "/"
   tls: 
-   - secretName: ""
-     hosts:
-       - react-mastermind.localhost
+    - secretName: ""
+      hosts:
+        - react-mastermind.localhost
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
